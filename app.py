@@ -39,13 +39,12 @@ except:
     st.stop()
 
 # --- CARGA DEL LOGO CEI ---
-# Si subiste el archivo "logo.png" a GitHub, aparece acá arriba.
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
     try:
         st.image("logo.png", use_container_width=True)
     except:
-        pass # Si el logo no está subido, no tira error, simplemente sigue de largo.
+        pass 
 
 # Interfaz de usuario
 st.markdown("<h1 style='text-align: center; color: #d81b60; margin-top: -20px;'>ANALIZADOR DE PIEL</h1>", unsafe_allow_html=True)
@@ -68,19 +67,21 @@ if imagen_cargada is not None:
                 # Motor V8 de Google
                 model = genai.GenerativeModel('gemini-2.5-flash')
                 
-                # LA ORDEN ESTRICTA A LA IA
+                # LA ORDEN ESTRICTA Y DETALLADA A LA IA
                 prompt = """
-                Actúa como un experto en cosmetología. Analiza esta imagen facial y determina ÚNICAMENTE:
+                Actúa como un experto en cosmetología. Analiza esta imagen facial en profundidad y determina ÚNICAMENTE lo siguiente:
                 1. Biotipo cutáneo.
                 2. Fototipo.
-                3. Principales inesteticismos o condiciones visibles.
-                IMPORTANTE: NO sugieras tratamientos, rutinas, ni nombres de principios activos. Tu tarea es exclusivamente el diagnóstico y análisis visual.
+                3. Estado general de la piel (grado de hidratación, luminosidad, textura).
+                4. Lesiones elementales, inesteticismos y signos de la edad detallados (identifica y describe arrugas, líneas de expresión, surcos, flacidez, manchas/máculas, poros dilatados, pápulas, pústulas, o cualquier otra alteración visible).
+                
+                IMPORTANTE: NO sugieras tratamientos, rutinas, ni nombres de principios activos. Tu tarea es exclusivamente el diagnóstico y el análisis visual exhaustivo del tejido.
                 Responde en español de Argentina, con un tono profesional, directo y claro.
                 """
                 
                 response = model.generate_content([prompt, imagen_pil])
                 
-                # Recuadro blanco para que resalte sobre el fondo rosa, con la clase para agrandar la letra
+                # Recuadro blanco para el informe
                 st.markdown(f"<div class='resultado-gemini' style='background-color: white; padding: 20px; border-radius: 15px; border-left: 5px solid #d81b60; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);'>{response.text}</div>", unsafe_allow_html=True)
             except Exception as e:
                 st.error(f"⚠️ Falla con Google: {str(e)}")
