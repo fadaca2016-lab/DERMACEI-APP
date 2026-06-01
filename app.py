@@ -69,4 +69,7 @@ if foto:
             if not resultado:
                 st.error("⚠️ El canal libre está procesando muchas imágenes en este segundo. Esperá 10 segundos y volvé a presionar el botón rosa.")
             else:
-                st.markdown(f"<div style='background-color: white; p
+                st.markdown(f"<div style='background-color: white; padding: 20px; border-radius: 15px; border-left: 5px solid #d81b60; color: black;'>{resultado}</div>", unsafe_allow_html=True)
+
+st.markdown("---")
+st.caption("Gestión Técnico-Analógica Internacional: CEI 2026")
