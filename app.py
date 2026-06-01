@@ -33,7 +33,7 @@ if imagen_cargada is not None:
     <style>
     div.stButton > button:first-child {
         background-color: #d81b60;
-        color: white;
+        color: pink;
         border-radius: 20px;
         padding: 10px 24px;
         border: none;
@@ -58,9 +58,9 @@ if imagen_cargada is not None:
                 
                 response = model.generate_content([prompt, imagen_pil])
                 
-                st.markdown(f"<div style='background-color: white; padding: 20px; border-radius: 15px; border-left: 5px solid #d81b60; color: black;'>{response.text}</div>", unsafe_allow_html=True)
+                st.markdown(f"<div style='background-color: pink; padding: 20px; border-radius: 15px; border-left: 5px solid #d81b60; color: black;'>{response.text}</div>", unsafe_allow_html=True)
             except Exception as e:
                 st.error(f"⚠️ Falla con Google: {str(e)}")
 
 st.markdown("---")
-st.markdown("<p style='text-align: center; color: gray; font-size: 12px;'>Gestión Técnico-Analógica Internacional: Fabio & Olga — CEI 2026</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: gray; font-size: 14px;'>Gestión Técnico-Analógica Internacional: — CEI 2026</p>", unsafe_allow_html=True)
