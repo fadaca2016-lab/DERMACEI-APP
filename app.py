@@ -63,4 +63,4 @@ if imagen_cargada is not None:
                 st.error(f"⚠️ Falla con Google: {str(e)}")
 
 st.markdown("---")
-st.markdown("<p style='text-align: center; color: gray; font-size: 14px;'>Gestión Técnico-Analógica Internacional: — CEI 2026</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: gray; font-size: 20px;'>Gestión Técnico-Analógica Internacional: — CEI 2026</p>", unsafe_allow_html=True)
