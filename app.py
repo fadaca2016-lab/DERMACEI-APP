@@ -3,10 +3,11 @@ import google.generativeai as genai
 from PIL import Image
 
 # Configuración de página
-st.set_page_config(page_title="Analizador Derma CEI", layout="centered")
+st.set_page_config(page_title="Derma CEI", layout="centered")
 
-# Inyección de CSS (Fondo rosa general y letra grande forzada)
+# Inyección de CSS (Fondo rosa, letra grande, logo y manifiesto)
 st.markdown("""
+<link rel="manifest" href="/manifest.json">
 <style>
 /* Fondo rosa para toda la aplicación */
 .stApp {
