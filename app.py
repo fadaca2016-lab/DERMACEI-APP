@@ -52,7 +52,6 @@ if imagen_cargada is not None:
                 1. Biotipo cutáneo.
                 2. Fototipo.
                 3. Principales inesteticismos o condiciones visibles.
-                4. Recomendación de principios activos (INCI) para tratamiento, sin mencionar marcas comerciales.
                 Responde en español de Argentina, con un tono profesional pero directo y claro.
                 """
                 
@@ -63,4 +62,4 @@ if imagen_cargada is not None:
                 st.error(f"⚠️ Falla con Google: {str(e)}")
 
 st.markdown("---")
-st.markdown("<p style='text-align: center; color: gray; font-size: 20px;'>Gestión Técnico-Analógica Internacional: — CEI 2026</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: gray; font-size: 24px;'>Gestión Técnico-Analógica Internacional: — CEI 2026</p>", unsafe_allow_html=True)
